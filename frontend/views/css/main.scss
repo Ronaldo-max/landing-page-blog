@@ -4,28 +4,48 @@ $button-bg: #9e6dc2;
 $white: #fff;
 $light-purple: #fbf6ff;
 $green: #4fff4b;
+$text: #808080;
 
 .flex {
     display: flex;
     align-items: center;
     justify-content: center;
 }
-
+.date {
+    font-family: "Roboto", sans-serif;
+    font-size: 12px;
+    font-weight: 400px;
+    color: $text;
+    width: 100%;
+    text-align: left;
+    margin-top: 5px;
+}
+h2 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700px;
+    color: $button-bg;
+    width: 100%;
+    text-align: left;
+    margin-top: 5px;
+}
+.text {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400px;
+    color: #000000;
+    width: 100%;
+    margin-top: 5px;
+}
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
 body {
     width: 100%;
     min-height: 100vh;
     background-color: $light-purple;
 }
-
 header {
-    @extend .flex;
-    flex-direction: column;
     width: 100%;
     padding-top: 20px;
     background-color: $dark-bg;
@@ -41,18 +61,15 @@ header {
             @extend .flex;
             gap: 2rem;
             margin-right: -50px;
-
             li {
                 list-style: none;
                 padding-left: 4px;
-
                 a {
                     text-decoration: none;
                     font-family: "Roboto", sans-serif;
                     font-weight: 400;
                     color: white;
                 }
-
                 &:hover {
                     border-left: 3px solid $green;
                 }
@@ -61,14 +78,14 @@ header {
         .search {
             @extend .flex;
             input {
-                width: 180px;
+                width: 200px;
                 height: 40px;
                 border: none;
                 outline: none;
                 font-size: 14px;
                 font-family: "Roboto", sans-serif;
                 font-weight: 400;
-                padding: 0 10px;
+                padding: 0 20px;
                 background-color: $purple-bg;
                 color: $white;
                 border-top-left-radius: 8px;
@@ -85,34 +102,92 @@ header {
                 background-color: $button-bg;
                 border-top-right-radius: 8px;
                 border-bottom-right-radius: 8px;
+                border: none;
                 width: 50px;
                 height: 40px;
+                &:hover {
+                    opacity: 0.8;
+                }
                 img {
                     height: 20px;
                 }
             }
         }
     }
-
     .container-header {
         @extend .flex;
         justify-content: space-evenly;
-        margin: 50px 0;
-
+        margin: 60px 0;
+        width: 100%;
         .container-text {
-            width: 400px;
-
+            width: 450px;
             h1 {
                 font-family: "Poppins", sans-serif;
                 font-weight: 700;
                 color: $button-bg;
             }
-
             p {
                 font-family: "Roboto", sans-serif;
                 font-weight: 400;
                 color: $white;
                 margin-top: 20px;
+                font-size: 14px;
+            }
+            a {
+                @extend .flex;
+                gap: 0.5rem;
+                font-family: "Roboto", sans-serif;
+                font-weight: 700;
+                color: $button-bg;
+                margin-top: 20px;
+                font-size: 16px;
+                text-decoration: none;
+                justify-content: flex-start;
+                img {
+                    width: 20px;
+                }
+            }
+        }
+        .container-img {
+            width: 500px;
+            img {
+                width: 100%;
+            }
+        }
+    }
+}
+main {
+    margin-top: 20px;
+    .post-main {
+        @extend .flex;
+        height: 450px;
+        justify-content: space-between;
+        margin: 2rem 5rem;
+        .container-left {
+            @extend .flex;
+            flex-direction: column;
+            width: 550px;
+            img {
+                width: 100%;
+            }
+        }
+        .container-right {
+            height: 100%;
+            width: 550px;
+            .post-one,
+            .post-two {
+                margin-top: 25px;
+            }
+        }
+    }
+    .list-posts {
+        @extend .flex;
+        justify-content: space-between;
+        margin: 2rem 5rem;
+        .post {
+            width: 350px;
+            img {
+                width: 350px;
             }
         }
     }
