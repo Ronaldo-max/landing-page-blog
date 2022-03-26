@@ -1,0 +1,119 @@
+$purple-bg: #290742;
+$dark-bg: #170027;
+$button-bg: #9e6dc2;
+$white: #fff;
+$light-purple: #fbf6ff;
+$green: #4fff4b;
+
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    background-color: $light-purple;
+}
+
+header {
+    @extend .flex;
+    flex-direction: column;
+    width: 100%;
+    padding-top: 20px;
+    background-color: $dark-bg;
+    border-bottom: 4px solid $green;
+    .menu {
+        @extend .flex;
+        width: 100%;
+        justify-content: space-around;
+        img {
+            width: 140px;
+        }
+        ul {
+            @extend .flex;
+            gap: 2rem;
+            margin-right: -50px;
+
+            li {
+                list-style: none;
+                padding-left: 4px;
+
+                a {
+                    text-decoration: none;
+                    font-family: "Roboto", sans-serif;
+                    font-weight: 400;
+                    color: white;
+                }
+
+                &:hover {
+                    border-left: 3px solid $green;
+                }
+            }
+        }
+        .search {
+            @extend .flex;
+            input {
+                width: 180px;
+                height: 40px;
+                border: none;
+                outline: none;
+                font-size: 14px;
+                font-family: "Roboto", sans-serif;
+                font-weight: 400;
+                padding: 0 10px;
+                background-color: $purple-bg;
+                color: $white;
+                border-top-left-radius: 8px;
+                border-bottom-left-radius: 8px;
+                &::placeholder {
+                    font-size: 14px;
+                    font-family: "Roboto", sans-serif;
+                    font-weight: 400;
+                    color: $white;
+                }
+            }
+            .img-search {
+                @extend .flex;
+                background-color: $button-bg;
+                border-top-right-radius: 8px;
+                border-bottom-right-radius: 8px;
+                width: 50px;
+                height: 40px;
+                img {
+                    height: 20px;
+                }
+            }
+        }
+    }
+
+    .container-header {
+        @extend .flex;
+        justify-content: space-evenly;
+        margin: 50px 0;
+
+        .container-text {
+            width: 400px;
+
+            h1 {
+                font-family: "Poppins", sans-serif;
+                font-weight: 700;
+                color: $button-bg;
+            }
+
+            p {
+                font-family: "Roboto", sans-serif;
+                font-weight: 400;
+                color: $white;
+                margin-top: 20px;
+            }
+        }
+    }
+}
